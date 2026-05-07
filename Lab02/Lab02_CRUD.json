@@ -1,0 +1,159 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Lab02_CRUD
+meta:
+  id: wrk_d04953b855e24601b440afc7d9961b0e
+  created: 1778194222005
+  modified: 1778195460717
+  description: ""
+collection:
+  - url: http://localhost:8080/api/pirates
+    name: CreatePirate
+    meta:
+      id: req_b3afc8dccf714d149ba45327003db123
+      created: 1778194222100
+      modified: 1778194988332
+      isPrivate: false
+      description: ""
+      sortKey: -1778194222100
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Buggy",
+          "bounty": 3189000000,
+          "crew": "Cross Guild",
+          "isAlive": true
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/pirates
+    name: GetPirate
+    meta:
+      id: req_26881ea775534dcba8058e71524e54a4
+      created: 1778194938810
+      modified: 1778194992980
+      isPrivate: false
+      description: ""
+      sortKey: -1778194938810
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/pirates/e78ffd22-006e-4a78-8364-24d2aeb67176
+    name: GetPirateById
+    meta:
+      id: req_46a52764fa2641b39af8d0ed18374511
+      created: 1778195011590
+      modified: 1778195078190
+      isPrivate: false
+      description: ""
+      sortKey: -1778195011590
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: ""
+    name: UpdatePirateById
+    meta:
+      id: req_d2ea6521a77a4332bc033b83fb10f019
+      created: 1778195119268
+      modified: 1778195398506
+      isPrivate: false
+      description: ""
+      sortKey: -1778195119268
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Roronoa Zoro",
+          "bounty": 1111000000,
+          "crew": "Sombrero de Paja",
+          "isAlive": true
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/pirates/f2503bc6-22aa-482c-8b46-5dc6b3a21c4d
+    name: DeletePirateById
+    meta:
+      id: req_1c98cb63ca3a40d695f4a0a04e1615cb
+      created: 1778195366849
+      modified: 1778195420242
+      isPrivate: false
+      description: ""
+      sortKey: -1778195366849
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/12.5.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_ce62d59d8b696a6e2a277a3a42ecad36b747747b
+    created: 1778194222010
+    modified: 1778194222010
+environments:
+  name: Base Environment
+  meta:
+    id: env_ce62d59d8b696a6e2a277a3a42ecad36b747747b
+    created: 1778194222008
+    modified: 1778194222008
+    isPrivate: false
