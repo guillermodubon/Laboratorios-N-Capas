@@ -1,0 +1,671 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-05-23T20:12:00.000Z",
+  "__export_source": "insomnia.desktop.app",
+  "resources": [
+    {
+      "_id": "wrk_lab03_censo_hyrule",
+      "parentId": null,
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "name": "Lab03CensoHyrule",
+      "description": "Prueba CRUD insomnia lab03_00106423",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_lab03_censo_hyrule_base",
+      "parentId": "wrk_lab03_censo_hyrule",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8080/api",
+        "crud_specimen_id": "{% response 'body', 'req_create_crud_specimen', 'b64:JC5kYXRhLmlk:46b', 'never', 60 %}",
+        "nonexistent_id": "00000000-0000-0000-0000-000000000404"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "crud_specimen_id",
+          "nonexistent_id"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1770000000000,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_lab03_censo_hyrule",
+      "parentId": "wrk_lab03_censo_hyrule",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "fld_seed_data",
+      "parentId": "wrk_lab03_censo_hyrule",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "name": "00 - Datos semilla para paginacion",
+      "description": "Carga datos de prueba.",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_crud",
+      "parentId": "wrk_lab03_censo_hyrule",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "name": "01 - CRUD completo",
+      "description": "Flujo CRUD básico.",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -900,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_pagination",
+      "parentId": "wrk_lab03_censo_hyrule",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "name": "02 - Paginacion y ordenamiento dinamico",
+      "description": "Prueba paginación y orden.",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -800,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_errors",
+      "parentId": "wrk_lab03_censo_hyrule",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "name": "03 - Errores controlados",
+      "description": "Prueba errores controlados.",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -700,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_seed_kolog",
+      "parentId": "fld_seed_data",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "Seed 01 - Kolog de Faron",
+      "description": "Crea Kolog.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"name\": \"Kolog de Faron\", \"region\": \"Faron\", \"dangerLevel\": 1, \"isFriendly\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_seed_bokoblin",
+      "parentId": "fld_seed_data",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "Seed 02 - Bokoblin de Eldin",
+      "description": "Crea Bokoblin.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"name\": \"Bokoblin de Eldin\", \"region\": \"Eldin\", \"dangerLevel\": 6, \"isFriendly\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -990,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_seed_lizalfos",
+      "parentId": "fld_seed_data",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "Seed 03 - Lizalfos de Lanayru",
+      "description": "Crea Lizalfos.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"name\": \"Lizalfos de Lanayru\", \"region\": \"Lanayru\", \"dangerLevel\": 7, \"isFriendly\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -980,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_seed_hylian",
+      "parentId": "fld_seed_data",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "Seed 04 - Viajero Hyliano",
+      "description": "Crea Hyliano.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"name\": \"Viajero Hyliano\", \"region\": \"Central Hyrule\", \"dangerLevel\": 2, \"isFriendly\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -970,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_seed_lynel",
+      "parentId": "fld_seed_data",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "Seed 05 - Lynel de Hebra",
+      "description": "Crea Lynel.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"name\": \"Lynel de Hebra\", \"region\": \"Hebra\", \"dangerLevel\": 10, \"isFriendly\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -960,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_crud_specimen",
+      "parentId": "fld_crud",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "01 - Create specimen para flujo CRUD",
+      "description": "Crea registro CRUD.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"name\": \"Guardian Scout\", \"region\": \"Akkala\", \"dangerLevel\": 8, \"isFriendly\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -900,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_created_specimen",
+      "parentId": "fld_crud",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens/{{ _.crud_specimen_id }}",
+      "name": "02 - Get specimen por ID creado",
+      "description": "Consulta por ID.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -890,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_created_specimen",
+      "parentId": "fld_crud",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens/{{ _.crud_specimen_id }}",
+      "name": "03 - Update specimen creado",
+      "description": "Actualiza registro.",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{ \"name\": \"Guardian Scout Reparado\", \"region\": \"Akkala Citadel\", \"dangerLevel\": 4, \"isFriendly\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -880,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_created_specimen",
+      "parentId": "fld_crud",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens/{{ _.crud_specimen_id }}",
+      "name": "04 - Delete specimen creado",
+      "description": "Elimina registro.",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -870,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_default",
+      "parentId": "fld_pagination",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "01 - Get all default page=0 size=10 sortBy=name asc",
+      "description": "Consulta valores default.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -800,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_page_name_asc",
+      "parentId": "fld_pagination",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "02 - Page 0 size 2 sortBy name asc",
+      "description": "Ordena nombre asc.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "size",
+          "value": "2",
+          "disabled": false
+        },
+        {
+          "name": "sortBy",
+          "value": "name",
+          "disabled": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "asc",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -790,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_page_name_desc",
+      "parentId": "fld_pagination",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "03 - Page 1 size 2 sortBy name desc",
+      "description": "Ordena nombre desc.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "disabled": false
+        },
+        {
+          "name": "size",
+          "value": "2",
+          "disabled": false
+        },
+        {
+          "name": "sortBy",
+          "value": "name",
+          "disabled": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "desc",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -780,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_page_danger_desc",
+      "parentId": "fld_pagination",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "04 - Page 0 size 3 sortBy dangerLevel desc",
+      "description": "Ordena peligro desc.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "size",
+          "value": "3",
+          "disabled": false
+        },
+        {
+          "name": "sortBy",
+          "value": "dangerLevel",
+          "disabled": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "desc",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -770,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_page_region_asc",
+      "parentId": "fld_pagination",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "05 - Page 0 size 4 sortBy region asc",
+      "description": "Ordena región asc.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "size",
+          "value": "4",
+          "disabled": false
+        },
+        {
+          "name": "sortBy",
+          "value": "region",
+          "disabled": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "asc",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -760,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_page_friendly_desc",
+      "parentId": "fld_pagination",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "06 - Page 0 size 5 sortBy isFriendly desc",
+      "description": "Ordena amistosos desc.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "size",
+          "value": "5",
+          "disabled": false
+        },
+        {
+          "name": "sortBy",
+          "value": "isFriendly",
+          "disabled": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "desc",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -750,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_error_404_missing_id",
+      "parentId": "fld_errors",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens/{{ _.nonexistent_id }}",
+      "name": "01 - Error 404 estetico: ID inexistente",
+      "description": "Valida error 404.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -700,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_error_invalid_sort",
+      "parentId": "fld_errors",
+      "modified": 1770000000000,
+      "created": 1770000000000,
+      "url": "{{ _.base_url }}/specimens",
+      "name": "02 - Error 400: campo sortBy inexistente",
+      "description": "Valida error 400.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "size",
+          "value": "10",
+          "disabled": false
+        },
+        {
+          "name": "sortBy",
+          "value": "rupeeCount",
+          "disabled": false
+        },
+        {
+          "name": "sortOrder",
+          "value": "asc",
+          "disabled": false
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -690,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    }
+  ]
+}
